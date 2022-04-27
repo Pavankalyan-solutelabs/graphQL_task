@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Student {
+  id: Float!
+  firstname: String!
+  lastname: String!
+  email: String!
+  role: String!
+  password: String!
+}
+
+type LoginObj {
+  id: Float!
+  email: String!
+}
+
+type LoginStudent {
+  access_token: String!
+  user: LoginObj!
+}
+
+type Query {
+  student: [Student!]!
+}
+
+type Mutation {
+  CreateStudent(createStudentInput: CreateStudentInput!): Student!
+  login(loginStudentInput: loginResponse!): LoginStudent!
+}
+
+input CreateStudentInput {
+  firstname: String!
+  lastname: String!
+  email: String!
+  password: String!
+  role: String!
+}
+
+input loginResponse {
+  email: String!
+  password: String!
+}

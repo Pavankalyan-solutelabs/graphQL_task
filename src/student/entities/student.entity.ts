@@ -1,7 +1,24 @@
-import { ObjectType, Field, Int } from '@nestjs/graphql';
+import { AllowedRole } from "src/role";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@ObjectType()
-export class Student {
-  @Field(() => Int, { description: 'Example field (placeholder)' })
-  exampleField: number;
+
+@Entity()
+export class studentEntity{
+  @PrimaryGeneratedColumn()
+  id:number
+
+  @Column()
+  firstname:string
+
+  @Column()
+  lastname:string
+
+  @Column()
+  email:string
+
+  @Column()
+  password:string
+
+  @Column()
+  role:string
 }
