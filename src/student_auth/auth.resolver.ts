@@ -24,8 +24,10 @@ export class AuthResolver {
     @Args('loginStudentInput') loginstudentInput:loginResponse,
     @Context() context,
   ) {
-    //console.log(context);
-    return this.authService.login(context.student);
+    let data={email:loginstudentInput.email,
+    password:loginstudentInput.password}
+    console.log("ctx",context);
+    return this.authService.login(context.user);
   }
 
   

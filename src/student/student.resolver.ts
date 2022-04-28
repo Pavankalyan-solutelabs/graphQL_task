@@ -21,28 +21,13 @@ export class StudentResolver {
   }
 
   
-  // @Mutation(() => LoginStudent)
-  //  @UseGuards(GqlAuthGuard)
-  // login(
-  //   @Args('loginUserInput') loginuserInput: loginResponse,
-  //   @Context() context,
-  // ) {
-  //   console.log(context);
-  //   return this.studentService.login(context.user);
-  // }
+  @Mutation(() => Student)
+  updateStudent(@Args('updateStudentInput') updateStudentInput: UpdateStudentInput) {
+    return this.studentService.update(updateStudentInput.id, updateStudentInput);
+  }
 
-  // @Query(() => Student, { name: 'student' })
-  // findOne(@Args('id', { type: () => Int }) id: number) {
-  //   return this.studentService.findOne(id);
-  // }
-
-  // @Mutation(() => Student)
-  // updateStudent(@Args('updateStudentInput') updateStudentInput: UpdateStudentInput) {
-  //   return this.studentService.update(updateStudentInput.id, updateStudentInput);
-  // }
-
-  // @Mutation(() => Student)
-  // removeStudent(@Args('id', { type: () => Int }) id: number) {
-  //   return this.studentService.remove(id);
-  // }
+  @Mutation(() => Student)
+  removeStudent(@Args('id', { type: () => Int }) id: number) {
+    return this.studentService.remove(id);
+  }
 }

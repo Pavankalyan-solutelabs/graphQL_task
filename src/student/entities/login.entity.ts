@@ -9,6 +9,6 @@ export class LoginStudent{
     @Field()
     access_token:string
 
-    @Field(()=>LoginObj)
+    @Field()
     user:LoginObj
 }

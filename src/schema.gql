@@ -26,8 +26,19 @@ type Query {
 }
 
 type Mutation {
+  updateStudent(updateStudentInput: UpdateStudentInput!): Student!
+  removeStudent(id: Int!): Student!
   CreateStudent(createStudentInput: CreateStudentInput!): Student!
   login(loginStudentInput: loginResponse!): LoginStudent!
+}
+
+input UpdateStudentInput {
+  firstname: String
+  lastname: String
+  email: String
+  password: String
+  role: String
+  id: Int!
 }
 
 input CreateStudentInput {

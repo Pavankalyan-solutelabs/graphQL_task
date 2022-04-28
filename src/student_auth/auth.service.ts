@@ -5,6 +5,8 @@ import * as bcrypt from "bcrypt"
 import { StudentService } from 'src/student/student.service';
 import { CreateStudentInput } from 'src/student/dto/create-student.input';
 import { LoginObj } from 'src/student/entities/login.obj';
+import { loginResponse } from 'src/student/dto/loginResponse';
+import { loginEntity } from 'src/student/entities/login-entity';
 
 @Injectable()
 export class AuthService {
@@ -22,7 +24,7 @@ export class AuthService {
         return "not valid credentials";
     }
 
-    async login(user:LoginObj){
+    async login(user:loginEntity){
        // const user=await this.userService.findOne(loginuserInput.username)
 
         // const  {password,...result}=user ;

@@ -2,6 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateStudentInput } from './dto/create-student.input';
+import { UpdateStudentInput } from './dto/update-student.input';
 import { studentEntity } from './entities/student.entity';
 
 @Injectable()
@@ -27,11 +28,11 @@ export class StudentService {
     return this.studentRepo.findOne({ where: { email: mail } });
   }
 
-  // update(id: number, updateStudentInput: UpdateStudentInput) {
-  //   return `This action updates a #${id} student`;
-  // }
+  update(id: number, updateStudentInput: UpdateStudentInput) {
+    return `This action updates a #${id} student`;
+  }
 
-  // remove(id: number) {
-  //   return `This action removes a #${id} student`;
-  // }
+  remove(id: number) {
+    return `This action removes a #${id} student`;
+  }
 }
